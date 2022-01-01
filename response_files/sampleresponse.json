@@ -1,0 +1,60 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "",
+    "title": ""
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "x-controller": "healthController",
+        "x-service": "healthService",
+        "operationId": "getHealth",
+        "x-validationOperationId": "validateHealthRequest",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "status",
+                    "lastUpdatedAt"
+                  ],
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "UP"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/file": {
+      "get": {
+        "x-controller": "fileController",
+        "x-service": "fileService",
+        "operationId": "fileGetOperation",
+        "x-validationOperationId": "fileValidateGetRequest",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
